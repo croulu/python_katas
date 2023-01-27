@@ -1,4 +1,21 @@
 def reverse_words(s):
+    new_string = []
+    string_split = s.split(' ')
+    index = len(string_split)
+    while index:
+        index -= 1
+        new_string.append(string_split[index])
+    return ' '.join(new_string)
+
+
+def reverse_words_other(str):
+    k = str.split(' ')
+    k.reverse()
+    str = ' '.join(k)
+    return str
+
+
+def reverse_letters(s):
     return s[::-1]
 
 
