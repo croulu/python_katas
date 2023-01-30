@@ -1,12 +1,12 @@
 import unittest
 
-from alias_gen import alias_gen, first_letter_in_uppercase, find_alias, FIRST_NAME, SURNAME, map_complete_name
+from alias_gen import alias_gen, first_letter_in_uppercase
 
-basic_tests = (
+qqbasic_tests = (
     (('Mike', 'Millington'), 'Malware Mike')
 )
 
-aabasic_tests = (
+basic_tests = (
     (('Mike', 'Millington'), 'Malware Mike'),
     (('Fahima', 'Tash'), 'Function T-Rex'),
     (('Daisy', 'Petrovic'), 'Data Payload'),
@@ -33,10 +33,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(first_letter_in_uppercase(name_1), letter_1)
 
     def test_find_alias(self):
-        self.assertEqual(map_complete_name(to_find_first_name, to_find_last_name), alias_found_complete)
+        self.assertEqual(alias_gen(to_find_first_name, to_find_last_name), alias_found_complete)
 
     def test_something(self):
         for names, result in basic_tests:
+         #   self.it('{} {}'.format(*names))
             self.assertEqual(alias_gen(*names), result)
 
 
