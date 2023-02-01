@@ -12,6 +12,17 @@ def zip_with(fn, a1, a2):
     return new_a
 
 
+def zip_with2(fn, a1, a2):
+    return list(map(fn, a1, a2))
+
+
+def zip_with3(fn,a1,a2):
+    return [fn(i,j) for i,j in zip(a1,a2)]
+
+
+zip_with4=lambda fn,a1,a2: [fn(a,b) for a,b in zip(a1,a2)]
+
+
 def get_minimum_length(a1, a2):
     len_a1 = len(a1)
     len_a2 = len(a2)
