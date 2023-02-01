@@ -1,9 +1,13 @@
 import unittest
 
-from zip_with import zip_with, add, sub, mul
+from zip_with import zip_with, add, get_minimum_length, sub, mul
 
 
 class MyTestCase(unittest.TestCase):
+    def test_unitary(self):
+        self.assertEqual(get_minimum_length([0, 1, 2, 3, 4, 5], [6, 5, 4, 3, 2]), 5)
+        self.assertEqual(get_minimum_length([0], [6, 5, 4, 3, 2]), 1)
+
     def test_basics(self):
         self.assertEqual(zip_with(add, [0, 1, 2, 3, 4, 5], [6, 5, 4, 3, 2, 1]), [6, 6, 6, 6, 6, 6])
         self.assertEqual(zip_with(add, [0, 1, 2, 3, 4], [6, 5, 4, 3, 2, 1]), [6, 6, 6, 6, 6])

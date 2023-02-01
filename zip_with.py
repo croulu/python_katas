@@ -1,15 +1,34 @@
 def zip_with(fn, a1, a2):
-    return 0
+    new_a = []
+    index = 0
+    len_a = get_minimum_length(a1, a2)
+
+    while index < len_a:
+        result = fn(a1[index], a2[index])
+
+        new_a.append(result)
+        index += 1
+
+    return new_a
 
 
-def add(a, b):
-    return a + b
+def get_minimum_length(a1, a2):
+    len_a1 = len(a1)
+    len_a2 = len(a2)
+
+    return len_a1 if len_a1 <= len_a2 else len_a2
 
 
-def sub(a, b):
-    return a - b
+add = lambda a, b: a + b
+pow = lambda a, b: a ^ b
+sub = lambda a, b: a - b
+max = lambda a, b: max(a, b)
 
 
-def mul(a, b):
-    return 0
-
+def mul(value, m):
+    result = ""
+    index = 1
+    while index <= m:
+        result += value
+        index += 1
+    return result
